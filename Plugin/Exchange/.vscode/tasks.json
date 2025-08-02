@@ -1,0 +1,83 @@
+{
+  "version": "2.0.0",
+  "tasks": 
+  [
+    {
+      "label": "Task 1",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/C",
+        "echo ${file}> .vscode/current_file_path.txt"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "silent"
+      }
+    },
+    {
+      "label": "Task 2",
+      "type": "process",
+      "command": "C:/Program Files/Autodesk/InfoWorks ICM Ultimate 2026/ICMExchange.exe",
+      "args": [
+        "--version",
+        "--",
+        "${workspaceFolder}/.vscode/repl.rb",
+        "/ICM"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Task 3",
+      "type": "process",
+      "command": "C:/Program Files/Innovyze Workgroup Client 2025.3/IExchange.exe",
+      "args": [
+        "--version",
+        "--",
+        "${workspaceFolder}/.vscode/repl.rb",
+        "/ICM"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Autodesk Exchange",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Task 1",
+        "Task 2"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Innovyze Exchange",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Task 1",
+        "Task 3"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
+  
