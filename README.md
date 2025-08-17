@@ -173,10 +173,6 @@ You can automate the creation and manipulation of multiple models in a loop, lev
 
 ---
 
-## License & Credits
-
-_No explicit license is provided with this project. Please contact the repository owner for usage terms._
-
 **Author:**  
 [chaitanyalakeshri](https://github.com/chaitanyalakeshri)
 
